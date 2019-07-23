@@ -5,8 +5,6 @@ services:
     volumes:
      - ./trimmomatic:/src/trimmomatic/
      - ./working:/working/
-    ports:
-     - 5001:80
   star:
     build: ./star
     volumes:
