@@ -16,22 +16,19 @@ RUN apt-get -y update && \
     ant \
     gradle \
     maven \
-    libssl-dev \
-    libffi-dev  && \
-    apt-get clean
-
-RUN apt-get update && \
-    apt-get install -y perl \
+    perl \
     gzip \
     libgomp1 \
-    bc && \
+    bc \
+    libssl-dev \
+    libffi-dev  && \
     apt-get clean
 
 RUN mkdir /opt/scripts
 
 # All the source code we need is local to our repository,
 # so we can just add the binaries to the container
-ADD run_trimmomatic.sh /opt/scripts/run_trimmomatic.sh
+ADD runsortmerna /opt/scripts/runsortmerna.sh
 ADD /src/Trimmomatic-0.36 /opt/Trimmomatic-0.36
 ADD /src/FastQC /opt/FastQC
 WORKDIR /working/
