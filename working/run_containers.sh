@@ -7,7 +7,7 @@ R2=${2}
 MOUNT="type=bind,source=$PWD,target=/working"
 
 docker run --rm --mount ${MOUNT} dockercomposepipeline_trimmomatic:latest \
-       /opt/scripts/runsortmerna.sh \
+       /opt/scripts/run_trimmomatic.sh \
        $R1 $R2 \
        TruSeq3-PE-2.fa:2:30:10 \
        36

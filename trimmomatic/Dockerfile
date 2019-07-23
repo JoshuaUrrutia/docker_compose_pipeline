@@ -31,7 +31,7 @@ RUN mkdir /opt/scripts
 
 # All the source code we need is local to our repository,
 # so we can just add the binaries to the container
-ADD runsortmerna /opt/scripts/runsortmerna.sh
+ADD run_trimmomatic.sh /opt/scripts/run_trimmomatic.sh
 ADD /src/Trimmomatic-0.36 /opt/Trimmomatic-0.36
 ADD /src/FastQC /opt/FastQC
 WORKDIR /working/
