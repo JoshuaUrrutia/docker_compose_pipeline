@@ -15,14 +15,8 @@ services:
      - 5000:80
     depends_on:
      - trimmomatic
-  bwa:
-    build: ./star
-    volumes:
-     - ./working:/working/
-    depends_on:
-     - trimmomatic
   multiqc:
-    build: ./multiqc
+    build: ./star
     volumes:
      - ./working:/working/
     depends_on:
