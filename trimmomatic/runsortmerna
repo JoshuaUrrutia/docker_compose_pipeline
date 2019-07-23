@@ -48,8 +48,25 @@ echo RNAME2 is $R2NAME
 mkdir trimmomatic
 
 
-echo java -jar ${TRIMMOMATIC_DIR}/trimmomatic-0.36.jar PE -phred33 ${R1} ${R2} trimmomatic/${R1NAME}.trimmed.fastq trimmomatic/${R1NAME}.unpaired.fastq trimmomatic/${R2NAME}.trimmed.fastq trimmomatic/${R2NAME}.unpaired.fastq ILLUMINACLIP:${TRIMMOMATIC_DIR}/adapters/${ADAPTER} LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:${MINLEN}
-java -jar ${TRIMMOMATIC_DIR}/trimmomatic-0.36.jar PE -phred33 ${R1} ${R2} trimmomatic/${R1NAME}.trimmed.fastq trimmomatic/${R1NAME}.unpaired.fastq trimmomatic/${R2NAME}.trimmed.fastq trimmomatic/${R2NAME}.unpaired.fastq ILLUMINACLIP:${TRIMMOMATIC_DIR}/adapters/${ADAPTER} LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:${MINLEN}
+echo java -jar ${TRIMMOMATIC_DIR}/trimmomatic-0.36.jar PE -phred33 \
+          ${R1} ${R2} \
+          trimmomatic/${R1NAME}.trimmed.fastq \
+          trimmomatic/${R1NAME}.unpaired.fastq \
+          trimmomatic/${R2NAME}.trimmed.fastq \
+          trimmomatic/${R2NAME}.unpaired.fastq \
+          ILLUMINACLIP:${TRIMMOMATIC_DIR}/adapters/${ADAPTER} \
+          LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 \
+          MINLEN:${MINLEN}
+
+java -jar ${TRIMMOMATIC_DIR}/trimmomatic-0.36.jar PE -phred33 \
+          ${R1} ${R2} \
+          trimmomatic/${R1NAME}.trimmed.fastq \
+          trimmomatic/${R1NAME}.unpaired.fastq \
+          trimmomatic/${R2NAME}.trimmed.fastq \
+          trimmomatic/${R2NAME}.unpaired.fastq \
+          ILLUMINACLIP:${TRIMMOMATIC_DIR}/adapters/${ADAPTER} \
+          LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 \
+          MINLEN:${MINLEN}
 
 cd trimmomatic
 
