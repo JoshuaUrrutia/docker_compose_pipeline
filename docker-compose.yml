@@ -19,5 +19,4 @@ services:
      - ./working:/working/
     depends_on:
      - trimmomatic
-     - bwa
      - star
