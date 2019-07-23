@@ -4,6 +4,7 @@ set -e
 R1=${1}
 R2=${2}
 outdir=${R1%_R1*}
+outdir=${outdir##*/}
 
 cd /chr4/
 gunzip *.gz
@@ -31,7 +32,7 @@ echo STAR --runThreadN 5 --genomeDir /chr4/ \
      --readFilesIn ${R1} ${R2} \
      --sjdbGTFfile /chr4/Homo_sapiens.GRCh38.97.chromosome.4.gff3 \
      --quantMode GeneCounts \
-     --outSAMtype BAM SortedByCoordinate
+     --outSAMtype BAM SortedByCoordinate \
      --sjdbGTFtagExonParentGeneName Name
 
 STAR --runThreadN 5 --genomeDir /chr4/ \
@@ -39,7 +40,8 @@ STAR --runThreadN 5 --genomeDir /chr4/ \
      --readFilesIn ${R1} ${R2} \
      --sjdbGTFfile /chr4/Homo_sapiens.GRCh38.97.chromosome.4.gff3 \
      --quantMode GeneCounts \
-     --outSAMtype BAM SortedByCoordinate
+     --outSAMtype BAM SortedByCoordinate \
+     --sjdbGTFtagExonParentGeneName Name
 
 
 # gzip ${R1%.gz}
