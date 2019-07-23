@@ -1,0 +1,5 @@
+#${CONTAINER_IMAGE} /opt/scripts/runsortmerna.sh ${r1} ${r2} ${adaptersfile} ${minlen}
+#echo docker run trimtest:0.0.1 /opt/scripts/runsortmerna.sh test/9249509-R1.fastq.gz test/9249509-R2.fastq.gz TruSeq3-PE-2.fa:2:30:10 36 trimtest:0.0.1 /opt/scripts/runsortmerna.sh test/9249509-R1.fastq.gz test/9249509-R2.fastq.gz TruSeq3-PE-2.fa:2:30:10 36
+#docker run trimtest:0.0.1 /opt/scripts/runsortmerna.sh test/9249509-R1.fastq.gz test/9249509-R2.fastq.gz TruSeq3-PE-2.fa:2:30:10 36 trimtest:0.0.1 /opt/scripts/runsortmerna.sh test/9249509-R1.fastq.gz test/9249509-R2.fastq.gz TruSeq3-PE-2.fa:2:30:10 36
+docker run --rm -it --mount type=bind,source=/Users/urrutia/Documents/TACC/docker_compose_pipeline/trimmomatic,target=/Users/urrutia/Documents/TACC/docker_compose_pipeline/trimmomatic trimtest:0.0.1 /opt/scripts/runsortmerna.sh test/9249509-R1.fastq.gz test/9249509-R2.fastq.gz TruSeq3-PE-2.fa:2:30:10 36
+#docker run --rm -it --mount type=bind,source=/home/urrutia,target=/home/urrutia   jurrutia/tophat:0.0.1
