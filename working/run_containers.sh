@@ -14,11 +14,11 @@ docker run --rm --mount ${MOUNT} dockercomposepipeline_trimmomatic:latest \
 
 docker run --rm --mount ${MOUNT} dockercomposepipeline_star:latest \
        /opt/scripts/star.sh \
-       trimmomatic/${R1%.f*}.trimmed.fastq.gz \
-       trimmomatic/${R2%.f*}.trimmed.fastq.gz
+       /working/trimmomatic/${R1%.f*}.trimmed.fastq.gz \
+       /working/trimmomatic/${R2%.f*}.trimmed.fastq.gz
 
 
-docker run --rm -mount ${MOUNT} dockercomposepipeline_multiqc:latest \
+docker run --rm --mount ${MOUNT} dockercomposepipeline_multiqc:latest \
        multiqc \
        -o multiqc/ \
        .
