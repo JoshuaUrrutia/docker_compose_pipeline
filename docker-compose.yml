@@ -14,7 +14,7 @@ services:
     depends_on:
      - trimmomatic
   multiqc:
-    build: ./star
+    build: ./multiqc
     volumes:
      - ./working:/working/
     depends_on:
